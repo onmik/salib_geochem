@@ -1,0 +1,38 @@
+#model_directory: pflotran
+#model_file: model.py             # model must be wrapped in the function run_model, eg. def runmodel(param_1, param_2, param_3):
+
+#parameter:
+#    - name: 'H_con'
+#      bounds: [5.0, 8.0]       #must be float
+#      distribution: 'unif'
+      
+#    - name: 'HCO3_con'
+#      bounds: [0.0001, 0.2]    #must be float
+#      distribution: 'unif'
+
+#    - name: 'rate'
+#      bounds: [1.e-7, 1.e-5]     #must be float
+#      distribution: 'unif'
+      
+#num_samples: 16
+
+
+
+model_directory: /home/ondro/opasys/phreeqc
+model_file: model.py             # model must be wrapped in the function run_model, eg. def runmodel(param_1, param_2, param_3):
+
+parameter:
+    - name: 'X_1'
+      bounds: [0.001, 1.0]       #must be float
+      distribution: 'unif'
+      
+    - name: 'X_2'
+      bounds: [0.0001, 1.0]    #must be float
+      distribution: 'unif'
+      
+num_samples: 16
+
+sobol_saltelli: True
+sobol_LHS: False
+sobol_FF: False
+PCE: False
